@@ -2,6 +2,10 @@
 
 
 def validUTF8(data):
+    """validUTF-8 is a function that determines if a given dataset represents
+    a valid UTF-8 encoding
+    method accept a data with passess a series of check to determines
+    it UTF-8"""
     index = 0
 
     while index < len(data):
