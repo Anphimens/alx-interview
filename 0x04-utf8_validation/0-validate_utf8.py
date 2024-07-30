@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """A method that determines if a given a dataset represents a valid UTF-8"""
 
+
 def validUTF8(data):
     """validUTF-8 is a function that determines if a given dataset represents
     a valid UTF-8 encoding
@@ -13,10 +14,9 @@ def validUTF8(data):
         byte = data[index]
         num_bytes = 0
 
-
         if byte & 0b10000000 == 0:
             num_bytes = 1
-        elif byte  & 0b11100000 == 0b11000000:
+        elif byte & 0b11100000 == 0b11000000:
             num_bytes = 2
         elif byte & 0b11110000 == 0b11100000:
             num_bytes = 3
@@ -31,7 +31,8 @@ def validUTF8(data):
 
         # Check the continuation bytes
         for i in range(1, num_bytes):
-            if index + i >= len(data) or data[index + i] & 0b11000000 != 0b10000000:
+            if (index + i >= len(data) or
+                    data[index + i] & 0b11000000 != 0b10000000):
                 return False
 
         # Move to the next character
