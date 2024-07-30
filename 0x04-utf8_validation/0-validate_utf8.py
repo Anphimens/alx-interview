@@ -24,16 +24,16 @@ def validUTF8(data):
             num_bytes = 4
         else:
             return False
-        
+
         # Check if there are enough bytes left
         if index + num_bytes > len(data):
             return False
-        
+
         # Check the continuation bytes
         for i in range(1, num_bytes):
             if index + i >= len(data) or data[index + i] & 0b11000000 != 0b10000000:
                 return False
-        
+
         # Move to the next character
         index += num_bytes
 
