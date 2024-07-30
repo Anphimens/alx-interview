@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""A method that determines if a given a dataset represents a valid UTF-8"""
 
 def validUTF8(data):
     """validUTF-8 is a function that determines if a given dataset represents
